@@ -17,8 +17,11 @@ int fact1() {
 	return s;
 }
 
+/**
+ *
+ */
 int fact2() {
-	int i,temp, s;
+	int i, temp, s;
 	s = 0;
 	temp = 1;
 	for (i = 1; i <= n; i++) {
