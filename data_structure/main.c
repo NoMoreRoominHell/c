@@ -10,8 +10,9 @@ int fact1() {
 	s = 0;
 	for (i = 1; i <= n; i++) {
 		temp = 1;
-		for (j = 1; j <= i; j++)
+		for (j = 1; j <= i; j++){
 			temp = temp * j;
+		}
 		s = s + temp;
 	}
 	return s;
