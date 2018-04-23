@@ -27,7 +27,7 @@ void printfArray(int data[]);
 
 //---------------------------------------------------------------------------------------------------
 
-/*--------------------冒泡排序---------------------*/
+//冒泡排序
 void bubleSort(int data[], int n) {
 	int i, j, temp;
 	//两个for循环，每次取出一个元素跟数组的其他元素比较
@@ -45,7 +45,7 @@ void bubleSort(int data[], int n) {
 	}
 }
 
-/*--------------------快速排序---------------------*/
+//快速排序
 int findPos(int data[], int low, int high) {
 	//将大于t的元素赶到t的左边，大于t的元素赶到t的右边
 	int t = data[low];
@@ -63,8 +63,12 @@ int findPos(int data[], int low, int high) {
 	//返回此时t在数组中的位置
 	return low;
 }
-//在数组中找一个元素，对大于该元素和小于该元素的两个数组进行再排序
-//再对两个数组分为4个数组，再排序，直到最后每组只剩下一个元素为止
+
+/**
+ * 快速排序
+ * 在数组中找一个元素，对大于该元素和小于该元素的两个数组进行再排序
+ * 再对两个数组分为4个数组，再排序，直到最后每组只剩下一个元素为止
+ */
 void quickSort(int data[], int low, int high) {
 	if (low > high) {
 		return;
@@ -74,7 +78,7 @@ void quickSort(int data[], int low, int high) {
 	quickSort(data, pos + 1, high);
 }
 
-/*--------------------插入排序---------------------*/
+//插入排序
 void bInsertSort(int data[], int n) {
 	int low, high, mid;
 	int temp;
@@ -102,7 +106,7 @@ void bInsertSort(int data[], int n) {
 	}
 }
 
-/*--------------------希尔排序---------------------*/
+//希尔排序
 void shellSort(int * data, int n) {
 	int step, i, j, key;
 	//将数组按照step分组，不断二分到每组只剩下一个元素
@@ -119,7 +123,7 @@ void shellSort(int * data, int n) {
 	}
 }
 
-/*--------------------选择排序---------------------*/
+//选择排序
 void selectSort(int data[], int n) {
 	int temp;
 	//每次循环数组，找出最小的元素，放在前面，前面的即为排序好的
@@ -141,9 +145,10 @@ void selectSort(int data[], int n) {
 	}
 }
 
-/*--------------------堆排序---------------------*/
-//堆排序将数组先组成二叉树，默认从数组的data[1]开始排，data[0]是
-//无效数据
+/**
+ * 堆排序
+ * 堆排序将数组先组成二叉树，默认从数组的data[1]开始排，data[0]是无效数据
+ */
 void heapSort(int data[], int n) {
 	int i;
 	//先将数组组成一棵完全二叉树
@@ -158,6 +163,7 @@ void heapSort(int data[], int n) {
 		heapAdjust(data, 1, i - 1);
 	}
 }
+
 //交换函数
 void swap(int data[], int i, int j) {
 	int temp;
@@ -184,7 +190,7 @@ void heapAdjust(int data[], int i, int n) {
 	data[i] = temp;
 }
 
-/*--------------------归并排序---------------------*/
+//归并排序
 void mergeSort(int data[], int first, int last) {
 	int mid = 0;
 	//将数组不停的二分分组再组合，直到每组只剩一个元素
@@ -232,8 +238,11 @@ void merge(int data[], int low, int mid, int high) {
 	free(temp);
 	return;
 }
-/*--------------------基数排序---------------------*/
-//该函数的作用是找出num的pos位数的数字(比如：23的个位数数字是3)
+
+/**
+ * 基数排序
+ * 该函数的作用是找出num的pos位数的数字(比如：23的个位数数字是3)
+ */
 int getNumPos(int num, int pos) {
 	int i;
 	int temp = 1;
@@ -305,7 +314,6 @@ int main() {
 //	int data[11] = { -1, 43, 65, 4, 23, 6, 98, 2, 65, 7, 79 };
 //	int i;
 //	printf("原先数组:");
-//	int data[11] = { -1, 43, 65, 4, 23, 6, 98, 2, 65, 7, 79 };
 //	for (i = 1; i < 11; i++) {
 //		printf("%d    ", data[i]);
 //	}
