@@ -311,31 +311,16 @@ int main() {
 	selectSort(data, 10);
 	printfArray(data);
 
-//	int data[11] = { -1, 43, 65, 4, 23, 6, 98, 2, 65, 7, 79 };
-//	int i;
-//	printf("原先数组:");
-//	for (i = 1; i < 11; i++) {
-//		printf("%d    ", data[i]);
-//	}
-//	printf("\n");
-//	printf(" 堆排序:");
-//	heapSort(data, 10);
-//	for (i = 1; i < 11; i++) {
-//		printf("%d    ", data[i]);
-//	}
-//	printf("\n");
-//	printf("归并排序:");
-//	mergeSort(data, 0, 9);
-//	for (i = 0; i < 10; i++) {
-//		printf("%d    ", data[i]);
-//	}
-//	printf("\n");
-//
-//	printf("基数排序:");
-//	radixSort(data, 10);
-//	for (i = 0; i < 10; i++) {
-//		printf("%d    ", data[i]);
-//	}
-//	printf("\n");
+	printf("堆排序:");
+	heapSort(data, 10);
+	printfArray(data);
+
+	printf("归并排序:");
+	mergeSort(data, 0, 10);
+	printfArray(data);
+
+	printf("基数排序:");
+	radixSort(data, 10);
+	printfArray(data);
 	return 0;
 }
