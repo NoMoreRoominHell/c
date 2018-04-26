@@ -286,7 +286,7 @@ void printfArray(int data[]) {
 	printf("\n");
 }
 
-int main() {
+int main2() {
 	int data[10] = { 43, 65, 4, 23, 6, 98, 2, 65, 7, 79 };
 	printf("原始数组:");
 	printfArray(data);
