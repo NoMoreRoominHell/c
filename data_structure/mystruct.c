@@ -37,6 +37,10 @@ void sort() {
 	printf("%d %d %d\n", a, b, c);
 }
 
+void maxmin() {
+	//TODO
+}
+
 /**
  *	数据结构导论
  */
