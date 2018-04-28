@@ -4,52 +4,42 @@
 
 #define N 3
 
-//求一个n阶方阵的所有元素之和
-void matrix() {
-	int a[N][N] = { { 1, 2, 3 }, { 4, 5, 6 }, { 8, 7, 9 } };
-	int sum = 0;
-	for (int i = 0; i < N; i++) {
-		for (int j = 0; j < N; j++) {
-			sum += a[i][j];
+int n = 5;
+
+/**
+ *	O(n^2)
+ */
+int fact1() {
+	int i, j, temp, s;
+	s = 0;
+	for (i = 1; i <= n; i++) { //频度:n+1
+		temp = 1;
+		for (j = 1; j <= i; j++) { //频度:n*(n+1)
+			temp = temp * j;
 		}
+		s = s + temp;
 	}
-	printf("the sum is %d\n", sum);
-}
-
-//输入3个任意整数，从小到大输出
-void sort() {
-	int a = 5, b = 8, c = 3, t = 0;
-	if (a > b) {
-		t = a;
-		a = b;
-		b = t;
-	}
-	if (a > c) {
-		t = a;
-		a = c;
-		c = t;
-	}
-	if (b > c) {
-		t = b;
-		b = c;
-		c = t;
-	}
-	printf("%d %d %d\n", a, b, c);
-}
-
-void maxmin() {
-	//TODO
+	return s;
 }
 
 /**
- *	数据结构导论
+ *	O(n)
  */
-int main() {
-	printf("start ...\n");
-
-	//matrix();
-	sort();
-
-	printf("end ...\n");
-	return 0;
+int fact2() {
+	int i, temp, s;
+	s = 0;
+	temp = 1;
+	for (i = 1; i <= n; i++) { //频度：n+1
+		temp = temp * i;
+		s = s + temp;
+	}
+	return s;
 }
+
+
+//int main() {
+//	printf("start ...\n");
+//
+//	printf("end ...\n");
+//	return 0;
+//}
