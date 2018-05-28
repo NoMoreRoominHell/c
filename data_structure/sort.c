@@ -26,18 +26,13 @@ int getNumPos(int num, int pos);
 void printfArray(int data[]);
 
 //---------------------------------------------------------------------------------------------------
-
 //冒泡排序
 void bubleSort(int data[], int n) {
-	int i, j, temp;
-	//两个for循环，每次取出一个元素跟数组的其他元素比较
-	//将最大的元素排到最后。
+	int i, j;
 	for (j = 0; j < n - 1; j++) {
-		//外循环一次，就排好一个数，并放在后面，
-		//所以比较前面n-j-1个元素即可
 		for (i = 0; i < n - j - 1; i++) {
 			if (data[i] > data[i + 1]) {
-				temp = data[i];
+				int temp = data[i];
 				data[i] = data[i + 1];
 				data[i + 1] = temp;
 			}
@@ -286,13 +281,14 @@ void printfArray(int data[]) {
 	printf("\n");
 }
 
-int main2() {
-	int data[10] = { 43, 65, 4, 23, 6, 98, 2, 65, 7, 79 };
+int main() {
+	int data[10] = { 2, 1, 9, 3, 4, 6, 5, 8, 7, 10 };
 	printf("原始数组:");
 	printfArray(data);
 
 	printf("冒泡排序:");
-	bubleSort(data, 10);
+	int length = sizeof(data) / sizeof(data[0]);
+	bubleSort(data, length);
 	printfArray(data);
 
 	printf("快速排序:");

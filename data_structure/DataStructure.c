@@ -57,7 +57,7 @@ void maxmin(int a[], int n, int *max, int *min) {
 	}
 }
 
-int main() {
+int main123() {
 	int a[] = { 1, 2, 3, 4, 5 };
 	int max = 0;
 	int min = 0;
