@@ -10,11 +10,10 @@ void selectionSort(int arr[], int n) {
 				min = j;
 			}
 		}
-		if (i != min) {
-			int tem = arr[i];
-			arr[i] = arr[min];
-			arr[min] = tem;
-		}
+
+		int tem = arr[i];
+		arr[i] = arr[min];
+		arr[min] = tem;
 	}
 }
 
