@@ -43,6 +43,7 @@ table addTable(table t, int elem, int add) {
 	t.length++;
 	return t;
 }
+
 table delTable(table t, int add) {
 	if (add > t.length || add < 1) {
 		printf("被删除元素的位置有误");
@@ -54,6 +55,7 @@ table delTable(table t, int add) {
 	t.length--;
 	return t;
 }
+
 int selectTable(table t, int elem) {
 	for (int i = 0; i < t.length; i++) {
 		if (t.head[i] == elem) {
@@ -67,6 +69,7 @@ table amendTable(table t, int elem, int newElem) {
 	t.head[add - 1] = newElem;
 	return t;
 }
+
 void displayTable(table t) {
 	for (int i = 0; i < t.length; i++) {
 		printf("%d", t.head[i]);
