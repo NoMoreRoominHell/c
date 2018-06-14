@@ -104,7 +104,7 @@ static void InOrderThraverse_Thr(BiThrTree h) {
 	}
 }
 
-int main() {
+int main_binary_tree_threaded2() {
 	BiThrTree t;
 	BiThrTree h;
 	printf("输入前序二叉树:\n");
