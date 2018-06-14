@@ -52,17 +52,17 @@ void findAndKillK(person * head, int k, int m) {
 	free(p);
 }
 
-//int main() {
-//	printf("输入圆桌上的人数n:");
-//	int n;
-//	scanf("%d", &n);
-//	person * head = initLink(n);
-//	printf("从第k人开始报数(k>1且k<%d)：", n);
-//	int k;
-//	scanf("%d", &k);
-//	printf("数到m的人出列：");
-//	int m;
-//	scanf("%d", &m);
-//	findAndKillK(head, k, m);
-//	return 0;
-//}
+int main_circular_linked_list() {
+	printf("输入圆桌上的人数n:");
+	int n;
+	scanf("%d", &n);
+	person * head = initLink(n);
+	printf("从第k人开始报数(k>1且k<%d)：", n);
+	int k;
+	scanf("%d", &k);
+	printf("数到m的人出列：");
+	int m;
+	scanf("%d", &m);
+	findAndKillK(head, k, m);
+	return 0;
+}

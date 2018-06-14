@@ -281,42 +281,42 @@ void printfArray(int data[]) {
 	printf("\n");
 }
 
-//int main() {
-//	int data[10] = { 2, 1, 9, 3, 4, 6, 5, 8, 7, 10 };
-//	printf("原始数组:");
-//	printfArray(data);
-//
-//	printf("冒泡排序:");
-//	int length = sizeof(data) / sizeof(data[0]);
-//	bubleSort(data, length);
-//	printfArray(data);
-//
-//	printf("快速排序:");
-//	quickSort(data, 0, 9);
-//	printfArray(data);
-//
-//	printf("插入排序:");
-//	bInsertSort(data, 10);
-//	printfArray(data);
-//
-//	printf("希尔排序:");
-//	shellSort(data, 10);
-//	printfArray(data);
-//
-//	printf("选择排序:");
-//	selectSort(data, 10);
-//	printfArray(data);
-//
-//	printf("堆排序:");
-//	heapSort(data, 10);
-//	printfArray(data);
-//
-//	printf("归并排序:");
-//	mergeSort(data, 0, 10);
-//	printfArray(data);
-//
-//	printf("基数排序:");
-//	radixSort(data, 10);
-//	printfArray(data);
-//	return 0;
-//}
+int main_sort() {
+	int data[10] = { 2, 1, 9, 3, 4, 6, 5, 8, 7, 10 };
+	printf("原始数组:");
+	printfArray(data);
+
+	printf("冒泡排序:");
+	int length = sizeof(data) / sizeof(data[0]);
+	bubleSort(data, length);
+	printfArray(data);
+
+	printf("快速排序:");
+	quickSort(data, 0, 9);
+	printfArray(data);
+
+	printf("插入排序:");
+	bInsertSort(data, 10);
+	printfArray(data);
+
+	printf("希尔排序:");
+	shellSort(data, 10);
+	printfArray(data);
+
+	printf("选择排序:");
+	selectSort(data, 10);
+	printfArray(data);
+
+	printf("堆排序:");
+	heapSort(data, 10);
+	printfArray(data);
+
+	printf("归并排序:");
+	mergeSort(data, 0, 10);
+	printfArray(data);
+
+	printf("基数排序:");
+	radixSort(data, 10);
+	printfArray(data);
+	return 0;
+}

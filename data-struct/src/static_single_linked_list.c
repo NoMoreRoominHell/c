@@ -126,25 +126,25 @@ void freeArr(component * array, int k) {
 	array[0].cur = k;
 }
 
-//int main() {
-//	component array[maxSize];
-//	int body = initArr(array);
-//	printf("静态链表为：\n");
-//	displayArr(array, body);
-//
-//	printf("在第3的位置上插入结点‘e’:\n");
-//	insertArr(array, body, 3, 'e');
-//	displayArr(array, body);
-//
-//	printf("删除数据域为‘a’的结点:\n");
-//	deletArr(array, body, 'a');
-//	displayArr(array, body);
-//
-//	printf("查找数据域为‘e’的结点的位置:\n");
-//	int selectAdd = selectElem(array, body, 'e');
-//	printf("%d\n", selectAdd);
-//	printf("将结点数据域为‘e’改为‘h’:\n");
-//	amendElem(array, body, 'e', 'h');
-//	displayArr(array, body);
-//	return 0;
-//}
+int main_static_single_linked_list() {
+	component array[maxSize];
+	int body = initArr(array);
+	printf("静态链表为：\n");
+	displayArr(array, body);
+
+	printf("在第3的位置上插入结点‘e’:\n");
+	insertArr(array, body, 3, 'e');
+	displayArr(array, body);
+
+	printf("删除数据域为‘a’的结点:\n");
+	deletArr(array, body, 'a');
+	displayArr(array, body);
+
+	printf("查找数据域为‘e’的结点的位置:\n");
+	int selectAdd = selectElem(array, body, 'e');
+	printf("%d\n", selectAdd);
+	printf("将结点数据域为‘e’改为‘h’:\n");
+	amendElem(array, body, 'e', 'h');
+	displayArr(array, body);
+	return 0;
+}
