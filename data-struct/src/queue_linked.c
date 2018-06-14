@@ -26,7 +26,7 @@ QNode* enQueue(QNode * rear, int data) {
 	return rear;
 }
 
-void DeQueue(QNode * front, QNode * rear) {
+static void DeQueue(QNode * front, QNode * rear) {
 	if (front->next == NULL) {
 		printf("队列为空");
 		return;
