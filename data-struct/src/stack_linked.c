@@ -36,7 +36,7 @@ static lineStack * pop(lineStack * stack) {
 	return stack;
 }
 
-int main_stack() {
+int main_stack_linked() {
 	lineStack * stack = NULL;
 	stack = push(stack, 'a');
 	stack = push(stack, 'b');
