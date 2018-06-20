@@ -1,3 +1,7 @@
+/**
+ * 顺序查找
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -15,7 +19,7 @@ typedef struct {
 void Create(SSTable **st, int length) {
 	(*st) = (SSTable*) malloc(sizeof(SSTable));
 	(*st)->elem = (ElemType*) malloc(sizeof(ElemType) * (length + 1));
-	(*st)->length = 6;
+	(*st)->length = length;
 
 	for (int i = 1; i <= length; i++) {
 		scanf("%d", &((*st)->elem[i].key));
@@ -32,7 +36,7 @@ int Search_seq(SSTable *st, keyType key) {
 	return i;
 }
 
-int main_sequel_search() {
+int main_sequence_search() {
 	int length = 6;
 
 	SSTable *st = NULL;
