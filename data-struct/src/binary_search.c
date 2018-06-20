@@ -12,13 +12,20 @@ typedef struct {
 	int length;
 } SSTable;
 
-int main() {
+int main_binary_search() {
 	SSTable *st;
 	st = (SSTable*) malloc(sizeof(SSTable));
-	st->length = 11;
-	for (int i = 1; i <= 11; i++) {
+	st->elem = (ElemType*) malloc(sizeof(ElemType) * 7);
+	st->length = 6;
+
+	for (int i = 1; i <= 6; i++) {
 		st->elem[i].key = i;
 	}
-	printf("%d", st->elem[1].key);
+	for (int i = 1; i <= 6; i++) {
+		printf("%d\n", st->elem[i].key);
+	}
+
+	free(st->elem);
+	free(st);
 	return 0;
 }
