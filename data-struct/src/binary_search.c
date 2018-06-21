@@ -46,7 +46,7 @@ int Search_Bin(SSTable *ST, keyType key) {
 	return 0;
 }
 
-int main() {
+int main_binary_search() {
 	int length = 11;
 	SSTable *st = NULL;
 	Create(&st, length);

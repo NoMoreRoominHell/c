@@ -1,7 +1,5 @@
 /**
  * 二叉链表
- *
- * 单支树
  */
 
 #include <stdio.h>
@@ -11,7 +9,8 @@
 
 typedef struct BiTNode {
 	TElemType data; //数据域
-	struct BiTNode *lchild, *rchild; //左右孩子指针
+	struct BiTNode *lchild; //左子
+	struct BiTNode *rchild; //右子
 } BiTNode, *BiTree;
 
 static void CreateBiTree(BiTree *T) {
@@ -27,9 +26,15 @@ static void CreateBiTree(BiTree *T) {
 	(*T)->lchild->lchild->rchild = NULL;
 }
 
+//main_binary_tree_linked
 int main_binary_tree_linked() {
 	BiTree Tree;
 	CreateBiTree(&Tree);
+	printf("%d", Tree->data);
+	printf("%d", Tree->lchild->data);
 	printf("%d", Tree->lchild->lchild->data);
+	free(Tree->lchild->lchild);
+	free(Tree->lchild);
+	free(Tree);
 	return 0;
 }
