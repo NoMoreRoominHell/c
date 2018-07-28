@@ -4,3 +4,9 @@
 Debug
 /Release/
 Default
+
+v15
+*.vcxproj.user
+*.vcxproj.filters
+*.vcxproj
+*.sln
