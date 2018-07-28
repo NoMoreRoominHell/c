@@ -2,68 +2,42 @@
 #include <stdlib.h>
 #include <Windows.h>
 
-
 void openIE() {
 	ShellExecute(0, "open", "http://baidu.com", 0, 0, 1);
 }
-
-void click() {
-	//¹â±êÒÆ¶¯µ½ÆÁÄ»Ö¸¶¨Î»ÖÃ
-	SetCursorPos(200, 250);
-
-	//Êó±êµ¥»÷
-	mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);//×ó¼ü°´ÏÂ
-	mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);//×ó¼üËÉ¿ª
-}
-
-void search()
-{
-	//¼üÅÌÊäÈë
-	keybd_event('J', 0, 0, 0); //°´ÏÂ
-	keybd_event('J', 0, 2, 0); //ËÉ¿ª
-	Sleep(500);
-	keybd_event('A', 0, 0, 0); //°´ÏÂ
-	keybd_event('A', 0, 2, 0); //ËÉ¿ª
-	Sleep(500);
-	keybd_event('V', 0, 0, 0); //°´ÏÂ
-	keybd_event('V', 0, 2, 0); //ËÉ¿ª
-	Sleep(500);
-	keybd_event('A', 0, 0, 0); //°´ÏÂ
-	keybd_event('A', 0, 2, 0); //ËÉ¿ª
-	Sleep(500);
-
-	//»Ø³µ
-	keybd_event(0x0d, 0, 0, 0);
-	keybd_event(0x0d, 0, 2, 0);
-	Sleep(500);
-}
-
-int main() {
-
-	/*
-	//´ò¿ªIEä¯ÀÀÆ÷
-	openIE();
-	Sleep(3000);
-	//ÊäÈëÒª²éÑ¯µÄ¹Ø¼ü×Ö
-	search();
-	Sleep(1000);
-	//ÉèÖÃÎ»ÖÃµã»÷²éÑ¯
-	click();
-	Sleep(2000);
-	*/
-
+void library() {
 	int move_x = 0;
 	int move_y = 0;
 
 	POINT cursoPos;
-
-	GetCursorPos(&cursoPos);//µÃµ½Êó±êµÄÎ»ÖÃ
+	GetCursorPos(&cursoPos);//å¾—åˆ°é¼ æ ‡çš„ä½ç½®
 	printf("x:%ld y:%ld\n", cursoPos.x, cursoPos.y);
 
-	SetCursorPos(move_x, move_y);
+	SetCursorPos(move_x, move_y);//è®¾ç½®é¼ æ ‡ä½ç½®
 
+								 //é¼ æ ‡å•å‡»
+	mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);//å·¦é”®æŒ‰ä¸‹
+	mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);//å·¦é”®æ¾å¼€
+
+	keybd_event('A', 0, 0, 0);
+	keybd_event('A', 0, KEYEVENTF_KEYUP, 0);
+}
+
+int main() {
+	char ch;
+	//å¾ªç¯ç›‘å¬ï¼Œç›´åˆ°æŒ‰Escé”®é€€å‡º
+	while (ch = getch()) {
+		if (ch == 27) {
+			break;
+		}
+		if (ch == VK_F1) {
+			printf("f1\n");
+		}
+		else {
+			printf("%d", ch);
+		}
+	}
 
 	system("pause");
-
 	return 0;
 }
