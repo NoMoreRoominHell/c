@@ -1,7 +1,10 @@
 #include <stdio.h>
-#include <windows.h>
 #include <raylib.h> // 1. 引入纯 C GUI 图形界面头文件！
 #include "hello.h"
+
+// 声明 Windows 控制台编码切换函数，避免引入 windows.h 导致 Rectangle/CloseWindow 等命名冲突
+extern int __stdcall SetConsoleOutputCP(unsigned int wCodePageCP);
+#define CP_UTF8 65001
 
 int main() {
     // 设置 Windows 控制台输出编码为 UTF-8 (65001)，完美防止中文输出乱码！
