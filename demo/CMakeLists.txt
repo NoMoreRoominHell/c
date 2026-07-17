@@ -22,3 +22,7 @@ add_executable(demo_app
 # 4. 指定头文件搜索路径 (-I 选项)
 # 这样源代码里就可以直接 #include "hello.h"，而无需写完整相对路径 src/../include/hello.h
 target_include_directories(demo_app PRIVATE include)
+
+# 5. 自动通过 vcpkg 寻找并链接 C 语言轻量 GUI 库 (raylib)
+find_package(raylib CONFIG REQUIRED)
+target_link_libraries(demo_app PRIVATE raylib)
