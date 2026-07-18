@@ -1,0 +1,3 @@
+cl pun.c /Fe:pun.exe /nologo
+
+.\pun.exe
